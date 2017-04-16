@@ -67,7 +67,6 @@ router.get("/api/stocks", (req, res) => {
   })
 })
 
-//Let's change this whole thing to a websocket instead of ajax-call ALL OF IT LET'S DO THIS MOTHERFFFUUU
 io.on("connection", (socket) => {
   console.log("A user connected")
   socket.on("disconnect", () => {
@@ -98,38 +97,5 @@ io.on("connection", (socket) => {
 
   })
 })
-
-/*router.post("/api/stocks", (req, res) => {
-  //Make a call to the quandl api to check if we get anything back
-  getQuandlData([req.body.stock], (data) => {
-    if (data.datatable.data.length === 0) {
-      console.log("data.lenght === 0")
-      return res.send(null)
-    }
-
-    const stock = new Stock({ stock: req.body.stock, color: getRandomColor() })
-    stock.save((err, result) => {
-      if (err) throw err
-      getStocksAndData((data, stocks) => {
-        res.send({data, stocks})
-        io.on("connection", (socket) => {
-          socket.broadcast.emit("new data", {data, stocks})
-        })
-      })
-    })
-  })
-})*/
-
-
-/*router.delete("/api/stocks/:stock", (req, res) => {
-  const stock = req.params.stock
-  Stock.findOneAndRemove({stock}, (err, doc) => {
-    console.log("Removed", doc)
-    getStocksAndData((data, stocks) => {
-      res.send({data, stocks})
-    })
-  })
-})*/
-//})
 
 module.exports = { router, io }
