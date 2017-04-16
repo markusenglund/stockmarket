@@ -1,0 +1,81 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+#chart {
+  display: inline-block;
+  position: relative;
+  border: 1px #bbb solid;
+}
+
+.line {
+  fill: none;
+  pointer-events: none;
+  stroke-width: 3;
+}
+
+.tooltip {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  padding:5px;
+  font-size:13px;
+  border: 2px #999 solid;
+  width: 150px;
+  display: none;
+}
+.tooltip-text {
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px;
+}
+.gridlines line {
+  stroke: #bbb;
+}
+
+.gridlines path {
+  stroke-width: 0;
+}
+
+#vertical-line {
+  stroke: #bbb;
+  pointer-events: none;
+  display: none;
+}
+
+form {
+  margin: 20px;
+}
+
+form .error-message {
+  background-color: rgba(255, 0, 0, 0.2);
+  margin-left: 10px;
+  padding: 5px;
+  display: inline;
+}
+
+.stock {
+  padding: 5px;
+  border: 1px #aaa solid;
+  background-color: #DDD;
+  border-radius: 4px;
+  margin: 10px;
+  display: inline-block;
+  padding: 4px;
+}
+
+.stock span {
+  margin: 10px;
+  margin-right: auto;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: #aaa;
+  border-radius: 2px;
+}
